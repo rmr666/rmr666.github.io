@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性布局焦点图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 外层大图容器 flex布局 */
+        .banner-box {
+            width: 60%;
+            max-width: 1200px;
+            height: 300px;
+            margin: 30px auto;
+            background: url("/homework4/images/banner1.jpg") no-repeat center/100% 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0 20px;
+        }
+        /* 左右箭头盒子（纯盒子包裹图片，不用button） */
+         .right-arr {
+            width: 60px;
+            height: 60px;
+            background: url("/homework4/images/arrow2.png") no-repeat center/contain;
+        }
+
+        .left-arr{
+             width: 60px;
+            height: 60px;
+            background: url("/homework4/images/arrow1.png") no-repeat center/contain;
+        }
+        
+        
+        /* 底部圆点容器 flex横向排列 */
+        .dot-container {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+        }
+        /* 圆点盒子 */
+        .dot {
+            width: 20px;
+            height: 20px;
+            background: url("/homework4/images/point1.png") no-repeat center/contain;
+        }
+        /* 当前选中圆点 */
+        .dot.current {
+            background: url("/homework4/images/point2.png") no-repeat center/contain;
+        }
+    </style>
+</head>
+<body>
+<div class="banner-box">
+    <!-- 左侧箭头盒子 -->
+    <div class="left-arr"></div>
+    <!-- 右侧箭头盒子 -->
+    <div class="right-arr"></div>
+    <!-- 底部圆点区域 -->
+    <div class="dot-container">
+        <div class="dot"></div>
+        <div class="dot current"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+</body>
+</html>
